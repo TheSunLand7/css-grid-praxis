@@ -1,0 +1,143 @@
+/* -- General Settings -- */
+* {
+	box-sizing: border-box;
+	margin: 0%;
+	padding: 0%;
+}
+
+:root {
+	--font-roboto: "Roboto", sans-serif;
+	--font-roboto-mono: "Roboto Mono", monospace;
+	--font-roboto-slab: "Roboto Slab", serif;
+}
+
+html {
+	font-size: 62.5%; /* Equivalente a 10px*/
+	font-family: var(--font-roboto-mono);
+}
+
+body {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+/* --------------- HEADER ----------------- */
+header {
+	width: 100%;
+	display: grid;
+	z-index: 2;
+	grid:
+		"icon-container" 50px
+		"logo-container" 90px
+		/ 1fr;
+}
+
+/* @font-face {
+	font-family: "Flaticon";
+	src: local("Flaticon") url("./font/Flaticon.ttf");
+	font-weight: bold;
+} */
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.header-icons-container {
+	display: grid;
+	justify-content: end;
+	grid-area: icon-container;
+	width: 100%;
+	background-color: #47cfac;
+}
+
+.header-icons {
+	display: grid;
+	grid-template-columns: repeat(5, 60px);
+	place-items: center;
+	width: 300px;
+	height: auto;
+	margin-right: 5rem;
+}
+
+.header-icons i {
+	color: #ffffff;
+}
+
+/* ---- nav bar ---- */
+.navbar {
+	display: grid;
+	grid-template-columns: 300px 1fr 200px;
+	grid-area: logo-container;
+	background-color: #ffffff;
+}
+
+.navbar-logo-container {
+	justify-self: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 220px;
+}
+
+.navbar-logo-container a img {
+	width: 100%;
+}
+
+.profile-link {
+	grid-column: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.8rem;
+}
+
+.profile-link a {
+	color: #000;
+	font-weight: bold;
+	border-bottom: 2px solid #000;
+}
+
+/* ------------------- MAIN ------------------ */
+
+.home-main {
+	display: grid;
+	height: calc(100vh - 140px);
+	grid-template-columns: 1fr 4fr 1fr;
+	background: url("../assets/imgs/Cover.png") center/cover no-repeat;
+}
+
+.home-main .home-main__container {
+	display: grid;
+	grid-column: 2;
+	justify-items: center;
+	height: 350px;
+	margin-top: 15rem;
+}
+
+.home-main .home-main__title {
+	font-family: var(--font-roboto-mono);
+	font-size: 3.5rem;
+	font-weight: bold;
+	letter-spacing: 10px;
+	color: #ffffff;
+	text-align: center;
+}
+
+.home-main .home-main__button {
+	width: 11rem;
+	height: 5rem;
+	cursor: pointer;
+	outline: none;
+	border: 2px solid #000;
+	color: #000;
+	border-radius: 0.6rem;
+	background-color: #47cfac;
+}
+
+.home-main__button a {
+	font-size: 1.8rem;
+	font-weight: bold;
+}
