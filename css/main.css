@@ -9,6 +9,7 @@
 	--font-roboto: "Roboto", sans-serif;
 	--font-roboto-mono: "Roboto Mono", monospace;
 	--font-roboto-slab: "Roboto Slab", serif;
+	--color-header: #4763cf;
 }
 
 html {
@@ -16,7 +17,7 @@ html {
 	font-family: var(--font-roboto-mono);
 }
 
-body {
+.home-body {
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -50,7 +51,7 @@ a {
 	justify-content: end;
 	grid-area: icon-container;
 	width: 100%;
-	background-color: #47cfac;
+	background-color: var(--color-header);
 }
 
 .header-icons {
@@ -64,6 +65,11 @@ a {
 
 .header-icons i {
 	color: #ffffff;
+	transition: color 0.5s;
+}
+
+.header-icons i:hover {
+	color: #0f005af7;
 }
 
 /* ---- nav bar ---- */
@@ -100,7 +106,7 @@ a {
 	border-bottom: 2px solid #000;
 }
 
-/* ------------------- MAIN ------------------ */
+/* ------------------- MAIN HOME------------------ */
 
 .home-main {
 	display: grid;
@@ -118,7 +124,7 @@ a {
 }
 
 .home-main .home-main__title {
-	font-family: var(--font-roboto-mono);
+	/* font-family: var(--font-roboto-mono); */
 	font-size: 3.5rem;
 	font-weight: bold;
 	letter-spacing: 10px;
@@ -127,17 +133,287 @@ a {
 }
 
 .home-main .home-main__button {
-	width: 11rem;
-	height: 5rem;
+	width: 13rem;
+	height: 6rem;
+	display: grid;
+	place-items: center;
 	cursor: pointer;
 	outline: none;
 	border: 2px solid #000;
-	color: #000;
 	border-radius: 0.6rem;
-	background-color: #47cfac;
+	background-color: var(--color-header);
+	transition: all 0.5s;
+}
+
+.home-main .home-main__button:hover {
+	border: 2px solid #ffffff;
+	background-color: rgb(135, 139, 172);
 }
 
 .home-main__button a {
 	font-size: 1.8rem;
 	font-weight: bold;
+	color: #ffffff;
+}
+
+/* ------------------ MAIN BLOGS -------------*/
+.blogs-main {
+	display: grid;
+}
+
+/* ---- recommended blog ---- */
+.recommended-blog-container {
+	padding: 0 5rem 4rem;
+	background-color: #e6e9ed;
+}
+
+.recommended-blog--img-side {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 2fr 1fr;
+	grid-template-rows: 2fr;
+}
+
+.recommended-blog--img-side h3 {
+	font-size: 2rem;
+	padding: 2rem 2rem 2rem 10rem;
+}
+
+.recommended-blog__img-container {
+	grid-column: 1;
+	margin-left: 10rem;
+}
+
+.recommended-blog__img-container img {
+	width: 85%;
+	border-radius: 2rem;
+}
+
+.recommended-blog--info-side {
+	grid-column: 2;
+}
+
+.recommended-blog--info-side h2 {
+	font-size: 3.2rem;
+	padding: 2rem 2rem 2rem 0;
+}
+
+.recommended-blog--info-side p {
+	margin-bottom: 3.5rem;
+	font-size: 2rem;
+}
+
+.blogs-button-container .blogs-button {
+	width: 14rem;
+	height: 5rem;
+	font-size: 1.6rem;
+	display: grid;
+	place-items: center;
+	border: 2px solid var(--color-header);
+	border-radius: 0.6rem;
+	transition: all 0.5s;
+}
+
+.blogs-button-container .blogs-button:hover {
+	cursor: pointer;
+	background-color: var(--color-header);
+	color: #fff;
+}
+
+/* ---- blog posts ---- */
+
+.blogs-posts-container {
+	display: grid;
+	padding: 0 5rem 4rem;
+	margin-bottom: 10rem;
+}
+
+.blogs-posts-container h3 {
+	font-size: 2rem;
+	padding: 2rem 0;
+	text-align: center;
+	border-bottom: 1px solid #cdd2da;
+}
+
+.blogs-posts {
+	margin-top: 3rem;
+	display: grid;
+	justify-content: center;
+	grid: 1fr 1fr / repeat(auto-fill, minmax(320px, 1fr));
+	gap: 30px;
+}
+
+.post-container {
+	padding: 2rem;
+	border: 4px solid var(--color-header);
+	border-radius: 2rem;
+}
+
+.post-container picture img {
+	width: 100%;
+	border-radius: 2rem;
+}
+
+.post-container h4 {
+	font-size: 1.8rem;
+	margin: 2rem 0 3rem;
+}
+
+.post-container p {
+	font-size: 1.8rem;
+	margin: 1rem 0 2rem;
+}
+
+.post-container picture figcaption a:hover {
+	text-decoration: underline;
+}
+
+/* --------------- FOOTER BLOGS -------------- */
+.blogs-footer {
+	width: 100%;
+	height: 14rem;
+	display: grid;
+	place-items: center;
+	border-top: 40px solid var(--color-header);
+	background-color: #22272d;
+}
+
+.blogs-footer p {
+	font-size: 1.6rem;
+	color: #ffffff;
+}
+
+/* ------------------ MAIN BLOG --------------- */
+.blog-main {
+	width: 100%;
+	display: grid;
+}
+
+.blog-img-section {
+	padding: 0 15rem 4rem;
+	text-align: center;
+}
+
+.blog-img-container img {
+	width: 100%;
+}
+
+/* ---- info section ---- */
+
+.blog-info-section {
+	padding: 0 15rem 4rem;
+	margin-bottom: 5rem;
+	/* max-width: 980px; */
+	justify-self: center;
+}
+
+.blog-info-section h3 {
+	padding-bottom: 3rem;
+	font-size: 2rem;
+	/* text-align: center; */
+	border-bottom: 1px solid #cdd2da;
+}
+.blog-info-container h1 {
+	margin: 2rem 0;
+	font-size: 5rem;
+}
+
+.blog-info-container p {
+	font-size: 2rem;
+	text-align: justify;
+}
+
+/* ---- contact section ---- */
+
+.main-contact-section {
+	padding: 10rem 25rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4rem;
+	background-color: #cdd2da;
+}
+
+.main-contact-container__email,
+.main-contact-container__social {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+}
+
+.img-contact-container img {
+	width: 10rem;
+}
+
+.contact a {
+	font-size: 1.6rem;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.contact p {
+	margin-top: 1.5rem;
+	font-size: 1.3rem;
+}
+
+/* ----------------- MAIN PERFIL --------------- */
+.perfil-main {
+	display: grid;
+}
+
+/* ---- perfil introduction */
+
+.perfil-introduction-container {
+	padding: 7rem 10rem;
+	margin-bottom: 5rem;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 2fr;
+	place-items: center;
+	background-color: #cdd2da;
+}
+
+.perfil-img-container {
+	grid-column: 1;
+}
+
+.perfil-img-container img {
+	width: 320px;
+	border-radius: 2rem;
+}
+
+.perfil-introduction-container h2 {
+	font-size: 3rem;
+}
+
+.perfil-introduction-container p {
+	font-size: 1.8rem;
+	margin-top: 2rem;
+}
+
+/* ---- perfil projects */
+.perfil-projects-section {
+	display: grid;
+	padding: 0 15rem 10rem;
+}
+
+.perfil-projects-section h3 {
+	margin: 2rem 0;
+	padding-bottom: 2rem;
+	font-size: 2rem;
+	text-align: center;
+	border-bottom: 1px solid #cdd2da;
+}
+
+.perfil-projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 2rem;
+}
+
+.project-container h4 {
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+}
+
+.project-container p {
+	font-size: 1.4rem;
 }
